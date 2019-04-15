@@ -1,0 +1,87 @@
+properties:
+
+  title:
+    type: string
+    length:
+      min: 1
+      max: 100
+    required: true
+    unique: true
+
+  description:
+    type: string
+    length:
+      min: 1
+    required: false
+    unique: false
+    multiple: true
+
+  price:
+    type: price
+    greaterThanOrEqual: 1
+    required: true
+    unique: false
+
+  annonce_category:
+    type: enumeration.annonce_category
+    required: true
+    unique: false
+
+  date_begin:
+    type: date
+    greaterThanOrEqual: today
+    required: true
+    unique: false
+
+  date_end:
+    type: date
+
+    required: true
+    unique: false
+
+  nbPerson:
+    type: int
+    greaterThanOrEqual: 1
+    required: true
+    unique: false
+
+  annonce:
+    type: entity.annonce
+    required: true
+    unique: false
+
+  photo:
+    type: file.photo
+    constraints:
+      mime: ['image/png']
+    required: false
+    unique: false
+    multiple: true
+
+  messageContent:
+    type: string
+    length:
+      min: 1
+      max: 255
+    required: true
+    unique: false
+
+  receiver:
+    type: string
+    required: true
+    unique: false
+
+  message:
+    type: embedded.message
+    required: true
+    unique: false
+
+  seen:
+    type: boolean
+    required: true
+    unique: false
+
+  dateOfPost:
+    type: date
+    required: true
+    unique: false

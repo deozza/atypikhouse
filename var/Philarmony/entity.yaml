@@ -1,0 +1,33 @@
+entities:
+  annonce:
+    properties: ['title', 'description', 'price', 'annonce_category', 'photo']
+    visible: ['all']
+    post:
+      properties: 'all'
+      by: ['owner', 'admin']
+    patch:
+      properties: 'all'
+      by : ['owner', 'admin']
+
+  reservation:
+    properties: ['date_begin', 'date_end', 'nbPerson', 'annonce']
+    visible: ['owner', 'admin', 'annonce.owner']
+    post:
+      properties: 'all'
+      by: ['owner', 'admin']
+    patch:
+      properties: ['date_begin', 'date_end', 'nbPerson']
+      by: ['owner', 'admin']
+
+  message:
+    properties: ['title', 'messageContent', 'dateOfPost', 'receiver', 'seen']
+    visible: ['owner', 'receiver', 'admin']
+    post:
+      properties: ['title','messageContent', 'receiver']
+
+  conversation:
+    properties: ['message']
+    visible: ['owner', 'admin', 'receiver']
+    post:
+      properties: 'all'
+      by: ['owner']

@@ -1,0 +1,4 @@
+philarmony_controllers:
+    resource: '@DeozzaPhilarmonyBundle/Controller'
+    type: annotation
+    prefix: /
