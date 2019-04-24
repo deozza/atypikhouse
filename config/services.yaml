@@ -24,5 +24,9 @@ services:
         resource: '@DeozzaPhilarmonyBundle/Controller'
         tags: ['controller.service_arguments']
 
+    Deozza\PhilarmonyBundle\Repository\:
+        resource: '@DeozzaPhilarmonyBundle/Repository'
+        tags: ['doctrine.repository_service']
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

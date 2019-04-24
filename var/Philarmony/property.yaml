@@ -9,12 +9,11 @@ properties:
     unique: true
 
   description:
-    type: string
+    type: array.string
     length:
       min: 1
     required: false
     unique: false
-    multiple: true
 
   price:
     type: price
@@ -35,11 +34,16 @@ properties:
 
   date_end:
     type: date
-
     required: true
     unique: false
 
   nbPerson:
+    type: int
+    greaterThanOrEqual: 1
+    required: true
+    unique: false
+
+  nbPersonMax:
     type: int
     greaterThanOrEqual: 1
     required: true
@@ -51,12 +55,11 @@ properties:
     unique: false
 
   photo:
-    type: file.photo
+    type: array.file
     constraints:
       mime: ['image/png']
     required: false
     unique: false
-    multiple: true
 
   messageContent:
     type: string
@@ -72,7 +75,7 @@ properties:
     unique: false
 
   message:
-    type: embedded.message
+    type: array.embedded.message
     required: true
     unique: false
 
@@ -80,8 +83,10 @@ properties:
     type: boolean
     required: true
     unique: false
+    default: false
 
   dateOfPost:
     type: date
     required: true
     unique: false
+    default: date.now

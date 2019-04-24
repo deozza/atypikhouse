@@ -1,6 +1,6 @@
 entities:
   annonce:
-    properties: ['title', 'description', 'price', 'annonce_category', 'photo']
+    properties: ['title', 'description', 'price', 'annonce_category', 'photo', 'nbPersonMax']
     visible: ['all']
     post:
       properties: 'all'
@@ -10,13 +10,13 @@ entities:
       by : ['owner', 'admin']
 
   reservation:
-    properties: ['date_begin', 'date_end', 'nbPerson', 'annonce']
+    properties: ['date_begin', 'date_end', 'nbPerson', 'annonce', "paid"]
     visible: ['owner', 'admin', 'annonce.owner']
     post:
-      properties: 'all'
+      properties: ['date_begin', 'date_end', 'nbPerson', 'annonce']
       by: ['owner', 'admin']
     patch:
-      properties: ['date_begin', 'date_end', 'nbPerson']
+      properties: ['date_begin', 'date_end', 'nbPerson', "paid"]
       by: ['owner', 'admin']
 
   message:

@@ -1,2 +1,2 @@
 enumerations:
-  annonce_category: ['category1', 'category2']
+  annonce_category: ['maison', 'appartement']

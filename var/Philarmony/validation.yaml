@@ -1,0 +1,26 @@
+validations:
+  annonce:
+    post:
+      constraints: null
+      visible:
+        user: owner
+        roles: admin
+    public:
+      constraints: manual
+      visible: all
+  reservation:
+    post:
+      constraints:
+        properties.date_begin: greaterThanOrEqual.reservation(#date_end)
+        properties.date_end: lesserThanOrEqual.reservation(#date_begin)
+        properties.nbPerson: lesserThanOrEqual.self(#annonce.nbPersonMax)
+        properties.annonce: equal(public)
+      visible:
+        user: [owner, annonce.owner]
+        roles: admin
+    public:
+      constraints:
+        properties.paid: true
+      visible:
+        user: [owner, annonce.owner]
+        roles: admin
