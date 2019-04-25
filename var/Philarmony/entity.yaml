@@ -7,49 +7,48 @@ entities:
           POST:
             properties: all
             by:
-              roles: ROLE_USER
+              roles: [ROLE_USER]
       posted:
-        constraints: null
         methods:
           POST:
             properties: [description, photo]
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           PATCH:
             properties: all
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           GET:
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           DELETE:
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
       public:
         constraints:
           manual:
             by:
-              roles: ROLE_ADMIN
+              roles: [ROLE_ADMIN]
         methods:
           POST:
             properties: [description, photo]
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           PATCH:
             properties: all
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           GET:
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
           DELETE:
             by:
-              users: owner
-              roles: ROLE_ADMIN
+              users: [owner]
+              roles: [ROLE_ADMIN]
