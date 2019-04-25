@@ -45,9 +45,7 @@ entities:
               users: [owner]
               roles: [ROLE_ADMIN]
           GET:
-            by:
-              users: [owner]
-              roles: [ROLE_ADMIN]
+            by: all
           DELETE:
             by:
               users: [owner]

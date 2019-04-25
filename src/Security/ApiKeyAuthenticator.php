@@ -28,30 +28,6 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
 
     public function supports(Request $request)
     {
-
-        $urlWithoutAuthentication = [
-            'POST'=>[
-                '/api/auth-token',
-                '/api/users',
-                '/api/reset-password/request',
-                '/api/reset-password/reset/',
-            ]
-        ];
-
-        foreach($urlWithoutAuthentication as $method => $bypassUrl)
-        {
-            if($request->getMethod() === $method)
-            {
-                foreach($bypassUrl as $url){
-                    if(substr($request->getPathInfo(), 0, strlen($url)) === $url)
-                    {
-                        return false;
-                    }
-                }
-            }
-        }
-
-
         return true;
     }
 
@@ -66,7 +42,7 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
     {
         if(empty($credentials))
         {
-            throw new CustomUserMessageAuthenticationException("Invalid token");
+            return new User();
         }
 
         try
