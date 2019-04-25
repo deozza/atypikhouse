@@ -1,6 +1,6 @@
 entities:
   annonce:
-    properties: [title, description, price, annonce_category, photo, nbPersonMax]
+    properties: ['title', 'description', 'price', 'annonce_category', 'photo', 'nbPersonMax']
     states:
       __default:
         methods:
@@ -12,7 +12,7 @@ entities:
         constraints: null
         methods:
           POST:
-            properties: [description, photo]
+            properties: ['description', 'photo']
             by:
               users: owner
               roles: ROLE_ADMIN
@@ -36,7 +36,7 @@ entities:
               roles: ROLE_ADMIN
         methods:
           POST:
-            properties: [description, photo]
+            properties: ['description', 'photo']
             by:
               users: owner
               roles: ROLE_ADMIN
@@ -53,3 +53,27 @@ entities:
             by:
               users: owner
               roles: ROLE_ADMIN
+
+
+reservation:
+  properties: ['date_begin', 'date_end', 'nbPerson', 'annonce', "paid"]
+  visible: ['owner', 'admin', 'annonce.owner']
+  POST:
+    properties: ['date_begin', 'date_end', 'nbPerson', 'annonce']
+    by: ['owner', 'admin']
+  PATCH:
+    properties: ['date_begin', 'date_end', 'nbPerson', "paid"]
+    by: ['owner', 'admin']
+
+message:
+  properties: ['title', 'messageContent', 'dateOfPost', 'receiver', 'seen']
+  visible: ['owner', 'receiver', 'admin']
+  POST:
+    properties: ['title','messageContent', 'receiver']
+
+conversation:
+  properties: ['message']
+  visible: ['owner', 'admin', 'receiver']
+  POST:
+    properties: 'all'
+    by: ['owner']
