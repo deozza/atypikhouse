@@ -55,10 +55,15 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
             $user = $this->em->getRepository(User::class)->findOneByUsername($username);
             if(!$this->em->getRepository(ApiToken::class)->findOneBy([
                 "user" => $user,
-                "kind" => "AUTH_TOKEN"
+                "kind" => "AUTH_TOKEN",
             ]))
             {
                 throw new CustomUserMessageAuthenticationException("Invalid token");
+            }
+
+            if($user->getActive() === false)
+            {
+                throw new CustomUserMessageAuthenticationException("Your account is not active.");
             }
 
             return $user;
@@ -73,6 +78,12 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
 
             if($data)
             {
+
+                if($data->getUser()->getActive() === false)
+                {
+                    throw new CustomUserMessageAuthenticationException("Your account is not active.");
+                }
+
                 return $data->getUser();
             }
             else
