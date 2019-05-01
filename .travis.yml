@@ -1,0 +1,26 @@
+branches:
+  only:
+    - master
+
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: 7.1
+    - php: 7.2
+
+before_install:
+  - composer self-update
+
+install:
+  - export COMPOSER_ROOT_VERSION=dev-master
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer update
+
+script:
+  - bin/phpunit
