@@ -53,6 +53,5 @@ trait UserFixtureTrait
             $token = new ApiToken($user, $tokenValue, $apiTokenKind);
             $this->manager->persist($token);
         }
-        return $user;
     }
 }

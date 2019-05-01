@@ -1,0 +1,8 @@
+{
+  "title": "title",
+  "description": ["description"],
+  "address": "address",
+  "price": "100",
+  "annonce_category": "maison",
+  "nbPersonMax": 2
+}

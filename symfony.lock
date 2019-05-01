@@ -1,4 +1,7 @@
 {
+    "deozza/api-tester-bundle": {
+        "version": "1.0.2"
+    },
     "deozza/philarmony-bundle": {
         "version": "dev-master"
     },
@@ -98,6 +101,9 @@
     },
     "firebase/php-jwt": {
         "version": "v5.0.0"
+    },
+    "fzaninotto/faker": {
+        "version": "v1.8.0"
     },
     "hoa/compiler": {
         "version": "3.17.08.08"
@@ -203,6 +209,9 @@
     "scienta/doctrine-json-functions": {
         "version": "4.0.2"
     },
+    "symfony/browser-kit": {
+        "version": "v4.2.7"
+    },
     "symfony/cache": {
         "version": "v4.2.5"
     },
@@ -233,6 +242,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v4.2.5"
+    },
+    "symfony/dom-crawler": {
+        "version": "v4.2.7"
     },
     "symfony/dotenv": {
         "version": "v4.2.5"
@@ -298,6 +310,22 @@
     "symfony/orm-pack": {
         "version": "v1.0.6"
     },
+    "symfony/phpunit-bridge": {
+        "version": "4.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "0e548dd90adba18fabd4ef419b14d361fe4d6c74"
+        },
+        "files": [
+            "./.env.test",
+            "./bin/phpunit",
+            "./config/bootstrap.php",
+            "./phpunit.xml.dist",
+            "./tests/.gitignore"
+        ]
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.11.0"
     },
@@ -353,6 +381,9 @@
         "version": "v4.2.7"
     },
     "symfony/security-http": {
+        "version": "v4.2.7"
+    },
+    "symfony/serializer": {
         "version": "v4.2.7"
     },
     "symfony/stopwatch": {

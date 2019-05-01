@@ -5,7 +5,7 @@ entities:
       __default:
         methods:
           POST:
-            properties: all
+            properties: [title, description, price, annonce_category, nbPersonMax]
             by:
               roles: [ROLE_USER]
       posted:
@@ -25,6 +25,7 @@ entities:
               users: [owner]
               roles: [ROLE_ADMIN]
           DELETE:
+            properties: [description, photo]
             by:
               users: [owner]
               roles: [ROLE_ADMIN]
@@ -47,6 +48,7 @@ entities:
           GET:
             by: all
           DELETE:
+            properties: [description, photo]
             by:
               users: [owner]
               roles: [ROLE_ADMIN]

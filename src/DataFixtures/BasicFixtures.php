@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class BasicFixtures extends Fixture
 {
     use UserFixtureTrait;
+    use AnnonceFixtureTrait;
 
     private $manager;
     private $encoder;
@@ -27,8 +28,18 @@ class BasicFixtures extends Fixture
             [
                 ['name'=>'userActive', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
                 ['name'=>'userInactive', 'active'=>false, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
+                ['name'=>'userForbidden', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
                 ['name'=>'userAdmin', 'active'=>true, 'role'=>["ROLE_ADMIN"], 'token'=>[ApiTokenKind::AUTH]]
             ]);
+        $this->manager->flush();
+
+        $this->annonces = $this->createAnnonces(
+            [
+                ["owner" => $this->users[0], "validationState"=>"posted"],
+                ["owner" => $this->users[0], "validationState"=>"public"],
+                ["owner" => $this->users[2], "validationState"=>"public"],
+            ]
+        );
 
 
 
