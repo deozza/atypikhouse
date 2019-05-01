@@ -9,6 +9,7 @@ sudo: false
 cache:
   directories:
     - $HOME/.composer/cache
+    - ./bin/.phpunit
 
 matrix:
   include:
@@ -20,6 +21,8 @@ before_install:
 install:
   - export COMPOSER_ROOT_VERSION=dev-master
   - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer update
+  - composer install
+  - ./bin/phpunit install
 
 script:
-  - bin/phpunit
+  - ./bin/phpunit
