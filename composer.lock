@@ -1,29 +1,29 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "45c4f6c16076f29386194c4f27facc56",
+    "content-hash": "c874d85c178443a547b68dda7ca37c9f",
     "packages": [
         {
             "name": "deozza/philarmony-bundle",
-            "version": "0.9.5",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deozza/Philarmony.git",
-                "reference": "82685176e2d76b7c1be4f83960b407cd42bf7abe"
+                "reference": "86deccef4fe99696208c59dcd2fde001b76d6f3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/82685176e2d76b7c1be4f83960b407cd42bf7abe",
-                "reference": "82685176e2d76b7c1be4f83960b407cd42bf7abe",
+                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/86deccef4fe99696208c59dcd2fde001b76d6f3e",
+                "reference": "86deccef4fe99696208c59dcd2fde001b76d6f3e",
                 "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
                 "ext-iconv": "*",
-                "jms/serializer-bundle": "^3.1",
+                "jms/serializer-bundle": "^3.2",
                 "knplabs/knp-paginator-bundle": "^3.0",
                 "php": "^7.1.3",
                 "ramsey/uuid-doctrine": "^1.5",
@@ -58,7 +58,7 @@
                 }
             ],
             "description": "A bundle to create quickly a modular REST API upon Symfony 4",
-            "time": "2019-05-01T22:58:09+00:00"
+            "time": "2019-05-02T07:49:52+00:00"
         },
         {
             "name": "doctrine/annotations",
