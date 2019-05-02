@@ -52,3 +52,31 @@ entities:
             by:
               users: [owner]
               roles: [ROLE_ADMIN]
+  reservation:
+    properties: [date_begin, date_end, nbPerson, paid, annonce]
+    states:
+      __default:
+        methods:
+          POST:
+            properties: [date_begin, date_end, nbPerson, annonce]
+            by:
+              roles: [ROLE_USER]
+      posted:
+        constraints:
+          properties.date_begin:
+            - notBetween.reservation(date_begin,date_end)
+          properties.date_end:
+            - greaterThan.self(#date_begin)
+          properties.nbPerson:
+            - lesserThanOrEqual.self(#annonce.nbPersonMax)
+          properties.annonce.validationState:
+            - equal(public)
+        methods:
+          GET:
+            by:
+              users: [owner, annonce.owner]
+              roles: [ROLE_ADMIN]
+          DELETE:
+            by:
+              users: [owner]
+              roles: [ROLE_ADMIN]
