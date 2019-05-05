@@ -30,3 +30,6 @@ install:
 
 script:
   - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
+
+services:
+  - mysql
