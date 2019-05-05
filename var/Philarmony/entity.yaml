@@ -67,6 +67,7 @@ entities:
             - notBetween.reservation(date_begin,date_end)
           properties.date_end:
             - greaterThan.self(#date_begin)
+            - notBetween.reservation(date_begin,date_end)
           properties.nbPerson:
             - lesserThanOrEqual.self(#annonce.nbPersonMax)
           properties.annonce.validationState:

@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "c874d85c178443a547b68dda7ca37c9f",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/deozza/Philarmony.git",
-                "reference": "86deccef4fe99696208c59dcd2fde001b76d6f3e"
+                "reference": "733c552057f6d53b7af166e16c4bfc9bcfafd3ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/86deccef4fe99696208c59dcd2fde001b76d6f3e",
-                "reference": "86deccef4fe99696208c59dcd2fde001b76d6f3e",
+                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/733c552057f6d53b7af166e16c4bfc9bcfafd3ab",
+                "reference": "733c552057f6d53b7af166e16c4bfc9bcfafd3ab",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 }
             ],
             "description": "A bundle to create quickly a modular REST API upon Symfony 4",
-            "time": "2019-05-02T07:49:52+00:00"
+            "time": "2019-05-05T21:28:35+00:00"
         },
         {
             "name": "doctrine/annotations",
