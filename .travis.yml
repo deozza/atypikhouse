@@ -27,6 +27,8 @@ install:
   - export COMPOSER_ROOT_VERSION=dev-master
   - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer update
   - ./vendor/bin/simple-phpunit install
+
+before_script:
   - php bin/console d:d:c
   - php bin/console d:s:u --force
   - php bin/console d:f:l --append
