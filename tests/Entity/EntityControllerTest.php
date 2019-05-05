@@ -42,6 +42,9 @@ class EntityControllerTest extends TestAsserter
                 ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/annonce'                             , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 400, 'in'=>"postEntityMissingKey"] ],
                 ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/annonce'                             , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 400, 'in'=>"postEntityInvalidChoice"] ],
                 ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/annonce'                             , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 409, 'in'=>"postEntityValid"] ],
+                ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/reservation'                         , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 409, 'in'=>"postEntityInvalidValidation"] ],
+                ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/reservation'                         , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 409, 'in'=>"postEntityInvalidValidation2"] ],
+                ["kind" => "unit", "test" => ['method'=> 'POST'   , 'url' => 'api/entity/reservation'                         , "token"=>"token_userActive_AUTH_TOKEN"   , 'status' => 201, 'in'=>"postEntityValidValidation"] ],
 
                 ["kind" => "unit", "test" => ['method'=> 'PATCH'  , 'url' => 'api/entity/00100000-0000-4000-a000-555555555555'                                           , 'status' => 404] ],
                 ["kind" => "unit", "test" => ['method'=> 'PATCH'  , 'url' => 'api/entity/00100000-0000-4000-a000-000000000000'                                           , 'status' => 401] ],

@@ -11,6 +11,7 @@ class BasicFixtures extends Fixture
 {
     use UserFixtureTrait;
     use AnnonceFixtureTrait;
+    use ReservationFixtureTrait;
 
     private $manager;
     private $encoder;
@@ -38,6 +39,12 @@ class BasicFixtures extends Fixture
                 ["owner" => $this->users[0], "validationState"=>"posted"],
                 ["owner" => $this->users[0], "validationState"=>"public"],
                 ["owner" => $this->users[2], "validationState"=>"public"],
+            ]
+        );
+
+        $this->reservations = $this->createReservations(
+            [
+                ["owner" => $this->users[0], "validationState"=>"posted", "date_begin"=>"2019-08-01", "date_end"=>"2019-08-10", "nbPerson"=>"1", "annonce"=>"00200000-0000-4000-a000-000000000000"],
             ]
         );
 
