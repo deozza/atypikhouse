@@ -22,6 +22,7 @@ matrix:
 
 before_install:
   - composer self-update
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS atypikhouse;'
 
 install:
   - export COMPOSER_ROOT_VERSION=dev-master
