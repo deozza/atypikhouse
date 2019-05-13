@@ -81,3 +81,38 @@ entities:
             by:
               users: [owner]
               roles: [ROLE_ADMIN]
+
+  message:
+    properties:
+      - title
+      - messageContent
+      - receiver
+      - dateOfPost
+      - seen
+
+  conversation:
+    properties:
+      - message
+    states:
+      __default:
+        methods:
+          POST:
+            properties:
+              - message
+            by:
+              roles:
+                - ROLE_USER
+          GET:
+            by:
+              roles:
+                - ROLE_ADMIN
+              users:
+                - owner
+          DELETE:
+            properties:
+              - message
+            by:
+              roles:
+                - ROLE_ADMIN
+              users:
+                - owner

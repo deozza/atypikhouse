@@ -1,2 +1,5 @@
 enumerations:
   annonce_category: ['maison', 'appartement']
+  boolean:
+    - true
+    - false

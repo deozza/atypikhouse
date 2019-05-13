@@ -2,91 +2,105 @@ properties:
 
   title:
     type: string
-    length:
-      min: 1
-      max: 100
-    required: true
-    unique: true
+    constraints:
+      length.min: 1
+      length.max: 100
+      required: true
+      unique: true
 
   description:
-    type: array.string
-    length:
-      min: 1
-    required: false
-    unique: false
+    type: string
+    array: true
+    constraints:
+      length.min: 1
+      required: false
+      unique: false
 
   price:
     type: price
-    greaterThanOrEqual: 1
-    required: true
-    unique: false
+    constraints:
+      greaterThanOrEqual: 1
+      required: true
+      unique: false
 
   annonce_category:
     type: enumeration.annonce_category
-    required: true
-    unique: false
+    constraints:
+      required: true
+      unique: false
 
   date_begin:
     type: date
-    greaterThanOrEqual: today
-    required: true
-    unique: false
+    constraints:
+      greaterThanOrEqual: today
+      required: true
+      unique: false
 
   date_end:
     type: date
-    required: true
-    unique: false
+    constraints:
+      required: true
+      unique: false
 
   nbPerson:
     type: int
-    greaterThanOrEqual: 1
-    required: true
-    unique: false
+    constraints:
+      greaterThanOrEqual: 1
+      required: true
+      unique: false
 
   nbPersonMax:
     type: int
-    greaterThanOrEqual: 1
-    required: true
-    unique: false
+    constraints:
+      greaterThanOrEqual: 1
+      required: true
+      unique: false
 
   annonce:
     type: entity.annonce
-    required: true
-    unique: false
+    constraints:
+      required: true
+      unique: false
 
   photo:
-    type: array.file
+    type: file
+    array: true
     constraints:
       mime: ['image/png']
-    required: false
-    unique: false
+      required: false
+      unique: false
 
   messageContent:
     type: string
-    length:
-      min: 1
-      max: 255
-    required: true
-    unique: false
+    constraints:
+      length.min: 1
+      length.max: 255
+      required: true
+      unique: false
 
   receiver:
     type: string
-    required: true
-    unique: false
+    constraints:
+      required: true
+      unique: false
 
   message:
-    type: array.embedded.message
-    required: true
-    unique: false
+    type: embedded.message
+    array: true
+    constraints:
+      required: true
+      unique: false
 
   seen:
-    type: boolean
-    required: true
-    unique: false
-    default: false
+    type: enumeration.boolean
+    constraints:
+      required: true
+      unique: false
+      automatic: false
 
   dateOfPost:
     type: date
-    required: true
-    unique: false
-    default: date.now
+    constraints:
+      required: true
+      unique: false
+      automatic: date.now
