@@ -30,7 +30,8 @@ class BasicFixtures extends Fixture
                 ['name'=>'userActive', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
                 ['name'=>'userInactive', 'active'=>false, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
                 ['name'=>'userForbidden', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
-                ['name'=>'userAdmin', 'active'=>true, 'role'=>["ROLE_ADMIN"], 'token'=>[ApiTokenKind::AUTH]]
+                ['name'=>'userAdmin', 'active'=>true, 'role'=>["ROLE_ADMIN"], 'token'=>[ApiTokenKind::AUTH]],
+                ['name'=>'userActive2', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]]
             ]);
         $this->manager->flush();
 
@@ -41,10 +42,11 @@ class BasicFixtures extends Fixture
                 ["owner" => $this->users[2], "validationState"=>"public"],
             ]
         );
+        $this->manager->flush();
 
         $this->reservations = $this->createReservations(
             [
-                ["owner" => $this->users[0], "validationState"=>"posted", "date_begin"=>"2019-08-01", "date_end"=>"2019-08-10", "nbPerson"=>"1", "annonce"=>"00200000-0000-4000-a000-000000000000"],
+                ["owner" => $this->users[4], "validationState"=>"posted", "date_begin"=>"2019-08-01", "date_end"=>"2019-08-10", "nbPerson"=>"1", "annonce"=>$this->annonces[1]],
             ]
         );
 

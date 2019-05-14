@@ -32,6 +32,8 @@ trait ReservationFixtureTrait
         $objectDateBegin = new \DateTime($date_begin);
         $objectDateEnd = new \DateTime($date_end);
 
+        $annonce= ["uuid"=>$annonce->getUuid(), "owner"=>$annonce->getOwner()->getId()];
+
         $properties =
             [
                 "date_begin"=> $objectDateBegin,
