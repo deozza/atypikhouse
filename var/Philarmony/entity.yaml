@@ -93,6 +93,7 @@ entities:
   conversation:
     properties:
       - message
+      - participants
     states:
       __default:
         methods:
@@ -102,17 +103,23 @@ entities:
             by:
               roles:
                 - ROLE_USER
+            post_scripts:
+              - addParticipants
+      posted:
+        methods:
+          POST:
+            properties:
+              - message
+            by:
+              users: participants
           GET:
             by:
               roles:
                 - ROLE_ADMIN
-              users:
-                - owner
+              users: participants
           DELETE:
             properties:
-              - message
             by:
               roles:
                 - ROLE_ADMIN
-              users:
-                - owner
+              users: participants

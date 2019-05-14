@@ -104,3 +104,10 @@ properties:
       required: true
       unique: false
       automatic: date.now
+
+  participants:
+    type: int
+    array: true
+    constraints:
+      required: true
+      unique: false
