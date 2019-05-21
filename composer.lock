@@ -1,19 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46d5f5cb576cab94256f48737fd983af",
+    "content-hash": "77d31c27f18903b9c06c2a7bb5ff0d59",
     "packages": [
         {
             "name": "deozza/philarmony-bundle",
-            "version": "9999999-dev",
+            "version": "1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deozza/Philarmony.git",
+                "reference": "f46c4684d16c1ab83dc113e9bd9267ffcf418b64"
+            },
             "dist": {
-                "type": "path",
-                "url": "../Philarmony",
-                "reference": "1effb4fca98cc97ebe5345f2dc56c31a760560b8",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/f46c4684d16c1ab83dc113e9bd9267ffcf418b64",
+                "reference": "f46c4684d16c1ab83dc113e9bd9267ffcf418b64",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
@@ -42,11 +47,7 @@
                     "Deozza\\PhilarmonyBundle\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Deozza\\PhilarmonyBundle\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -56,7 +57,8 @@
                     "email": "deozza@gmail.com"
                 }
             ],
-            "description": "A bundle to create quickly a modular REST API upon Symfony 4"
+            "description": "A bundle to create quickly a modular REST API upon Symfony 4",
+            "time": "2019-05-21T12:18:30+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -6387,9 +6389,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "deozza/philarmony-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

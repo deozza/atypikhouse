@@ -69,7 +69,7 @@ entities:
             - greaterThan.self(#date_begin)
             - notBetween.reservation(date_begin,date_end)
           properties.nbPerson:
-            - lesserThanOrEqual.self(#annonce.nbPersonMax)
+            - lesserThanOrEqual.self(#annonce.properties.nbPersonMax)
           properties.annonce.validationState:
             - equal(public)
         methods:
@@ -84,7 +84,7 @@ entities:
 
   message:
     properties:
-      - title
+      - messageTitle
       - messageContent
       - receiver
       - dateOfPost

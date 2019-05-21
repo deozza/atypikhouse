@@ -70,6 +70,15 @@ properties:
       required: false
       unique: false
 
+
+  messageTitle:
+    type: string
+    constraints:
+      length.min: 1
+      length.max: 100
+      required: true
+      unique: false
+
   messageContent:
     type: string
     constraints:

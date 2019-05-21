@@ -5,7 +5,7 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "deozza/philarmony-bundle": "dev-event_handling",
+        "deozza/philarmony-bundle": "1.2.*",
         "firebase/php-jwt": "^5.0",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
