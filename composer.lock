@@ -1,19 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdfd7ec295a0770332bd206aab27b1bb",
+    "content-hash": "77d31c27f18903b9c06c2a7bb5ff0d59",
     "packages": [
         {
             "name": "deozza/philarmony-bundle",
-            "version": "dev-feature_sort_get_list",
+            "version": "1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deozza/Philarmony.git",
+                "reference": "f46c4684d16c1ab83dc113e9bd9267ffcf418b64"
+            },
             "dist": {
-                "type": "path",
-                "url": "../Philarmony",
-                "reference": "0552c8f2ff9359fbaa515f0ab3cdc296ec5bfb9c",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/deozza/Philarmony/zipball/f46c4684d16c1ab83dc113e9bd9267ffcf418b64",
+                "reference": "f46c4684d16c1ab83dc113e9bd9267ffcf418b64",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
@@ -42,11 +47,7 @@
                     "Deozza\\PhilarmonyBundle\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Deozza\\PhilarmonyBundle\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -56,7 +57,8 @@
                     "email": "deozza@gmail.com"
                 }
             ],
-            "description": "A bundle to create quickly a modular REST API upon Symfony 4"
+            "description": "A bundle to create quickly a modular REST API upon Symfony 4",
+            "time": "2019-05-21T12:18:30+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -436,16 +438,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "6e15d2d9a8f90c0f9b5664b0db92686ff14fcd7d"
+                "reference": "09a38417339dc93849d051b914aae3947eb231a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/6e15d2d9a8f90c0f9b5664b0db92686ff14fcd7d",
-                "reference": "6e15d2d9a8f90c0f9b5664b0db92686ff14fcd7d",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/09a38417339dc93849d051b914aae3947eb231a7",
+                "reference": "09a38417339dc93849d051b914aae3947eb231a7",
                 "shasum": ""
             },
             "require": {
@@ -521,7 +523,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2019-05-10T13:27:28+00:00"
+            "time": "2019-05-13T14:30:38+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -5343,16 +5345,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae"
+                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
-                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5240e21982885b76629552d83b4ebb6d41ccde6b",
+                "reference": "5240e21982885b76629552d83b4ebb6d41ccde6b",
                 "shasum": ""
             },
             "require": {
@@ -5368,7 +5370,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.9-dev"
+                    "dev-master": "2.10-dev"
                 }
             },
             "autoload": {
@@ -5406,7 +5408,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-04-28T06:57:38+00:00"
+            "time": "2019-05-14T12:03:52+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -6387,9 +6389,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "deozza/philarmony-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
