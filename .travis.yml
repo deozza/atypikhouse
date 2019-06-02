@@ -18,8 +18,10 @@ env:
     - SYMFONY_VERSION="4.2.*" DB=mysql
 
 matrix:
+  fast_finish: true
   include:
     - php: '7.2'
+      env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER="weak_vendors"
 
 before_install:
   - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
