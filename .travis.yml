@@ -19,7 +19,7 @@ env:
 
 matrix:
   include:
-    - php: 7.2
+    - php: '7.2'
 
 before_install:
   - composer self-update
@@ -30,7 +30,7 @@ install:
   - ./vendor/bin/simple-phpunit install
 
 script:
-  - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
+  - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS --env=test
 
 services:
   - mysql
