@@ -20,13 +20,14 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    Deozza\PhilarmonyBundle\Controller\:
-        resource: '@DeozzaPhilarmonyBundle/Controller'
+
+    Deozza\PhilarmonyCoreBundle\Controller\:
+        resource: '@DeozzaPhilarmonyCoreBundle/Controller'
         tags: ['controller.service_arguments']
 
-    Deozza\PhilarmonyBundle\Repository\:
-        resource: '@DeozzaPhilarmonyBundle/Repository'
-        tags: ['doctrine.repository_service']
+    Deozza\PhilarmonyCoreBundle\Repository\:
+        resource: '@DeozzaPhilarmonyCoreBundle/Repository'
+        tags: ['doctrine.service_entity']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

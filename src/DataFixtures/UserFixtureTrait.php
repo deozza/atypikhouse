@@ -2,7 +2,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\ApiToken;
-use App\Entity\ApiTokenKind;
 use App\Entity\User;
 
 trait UserFixtureTrait
@@ -13,14 +12,14 @@ trait UserFixtureTrait
         $users = [];
         foreach($items as $item)
         {
-            $user = $this->createUser($item["name"], $item['active'], $item['role'], $item['token']);
+            $user = $this->createUser($item["name"], $item['active'], $item['role']);
             $users[] = $user;
         }
 
         return $users;
     }
 
-    public function createUser($name, $active, $role=[], $token)
+    public function createUser($name, $active, $role=[])
     {
 
         $user = new User();
@@ -36,22 +35,15 @@ trait UserFixtureTrait
 
         $this->manager->persist($user);
 
-        if(!empty($token))
-        {
-            $this->createTokenForUser($user,$token);
-        }
+        $this->createTokenForUser($user);
 
         return $user;
     }
 
-    public function createTokenForUser(User $user, $kinds)
+    public function createTokenForUser(User $user)
     {
-        foreach($kinds as $kind)
-        {
-            $tokenValue = "token_".$user->getUsername()."_".$kind;
-            $apiTokenKind = ApiTokenKind::AUTH;
-            $token = new ApiToken($user, $tokenValue, $apiTokenKind);
-            $this->manager->persist($token);
-        }
+        $tokenValue = "token_".$user->getUsername();
+        $token = new ApiToken($user, $tokenValue);
+        $this->manager->persist($token);
     }
 }

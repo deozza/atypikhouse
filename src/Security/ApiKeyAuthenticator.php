@@ -53,10 +53,7 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
             $data = JWT::decode($credentials, $secret, ["HS256"]);
             $username = $data['username'];
             $user = $this->em->getRepository(User::class)->findOneByUsername($username);
-            if(!$this->em->getRepository(ApiToken::class)->findOneBy([
-                "user" => $user,
-                "kind" => "AUTH_TOKEN",
-            ]))
+            if(!$this->em->getRepository(ApiToken::class)->findOneByUser($user))
             {
                 throw new CustomUserMessageAuthenticationException("Invalid token");
             }
@@ -71,10 +68,7 @@ class ApiKeyAuthenticator extends AbstractGuardAuthenticator
         catch(\Exception $e)
         {
 
-            $data = $this->em->getRepository(ApiToken::class)->findOneBy([
-                "token" => $credentials,
-                "kind" => "AUTH_TOKEN"
-                ]);
+            $data = $this->em->getRepository(ApiToken::class)->findOneByToken($credentials);
 
             if($data)
             {
