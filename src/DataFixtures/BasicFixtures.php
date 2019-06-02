@@ -27,11 +27,11 @@ class BasicFixtures extends Fixture
 
         $this->users = $this->createUsers(
             [
-                ['name'=>'userActive', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
-                ['name'=>'userInactive', 'active'=>false, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
-                ['name'=>'userForbidden', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]],
-                ['name'=>'userAdmin', 'active'=>true, 'role'=>["ROLE_ADMIN"], 'token'=>[ApiTokenKind::AUTH]],
-                ['name'=>'userActive2', 'active'=>true, 'role'=>[], 'token'=>[ApiTokenKind::AUTH, ApiTokenKind::RESET]]
+                ['name'=>'userActive', 'active'=>true, 'role'=>[]],
+                ['name'=>'userInactive', 'active'=>false, 'role'=>[]],
+                ['name'=>'userForbidden', 'active'=>true, 'role'=>[]],
+                ['name'=>'userAdmin', 'active'=>true, 'role'=>["ROLE_ADMIN"]],
+                ['name'=>'userActive2', 'active'=>true, 'role'=>[]]
             ]);
         $this->manager->flush();
 
