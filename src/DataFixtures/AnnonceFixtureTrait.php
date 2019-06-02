@@ -2,7 +2,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
-use Deozza\PhilarmonyBundle\Entity\Entity;
+use Deozza\PhilarmonyCoreBundle\Entity\Entity;
 use Faker;
 
 trait AnnonceFixtureTrait

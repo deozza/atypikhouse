@@ -2,7 +2,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\ApiToken;
-use App\Entity\ApiTokenKind;
 use App\Entity\User;
 
 trait UserFixtureTrait
